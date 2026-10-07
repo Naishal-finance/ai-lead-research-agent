@@ -1,0 +1,6 @@
+I am Naishal Parmar, an MSc International Finance student in Paris (ex-Deloitte M&A & FinTech, 1 year).
+I am looking for a founder's associate / generalist / customer success role at an early-stage startup, starting December 2026.
+What I bring: financial modelling, turning messy data into decisions, client-facing deal experience,
+and I build my own automation in Python (trading bots, data pipelines, AI agents like this one).
+Best fit: startups using AI, fintech, B2B SaaS, or companies modernising a traditional industry,
+that need someone hands-on to own operations, customer work, or finance.

@@ -1,0 +1,4 @@
+requests
+beautifulsoup4
+streamlit
+# anthropic   # only for the paid --provider claude option
