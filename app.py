@@ -34,7 +34,7 @@ with st.sidebar:
             os.environ["ANTHROPIC_API_KEY"] = key
     sender = st.text_input("Sign emails as", "Naishal")
     st.markdown("---")
-    st.caption("Your key stays on your computer and is never saved.")
+    st.caption("Your key is only used for this session and is never saved.")
 
 # ── Inputs ──────────────────────────────────────────────────────────────────
 col1, col2 = st.columns(2)
@@ -107,8 +107,11 @@ if "results" in st.session_state:
     st.subheader("Draft emails: read and edit before sending")
     for r in res:
         with st.expander(f"{r['company']} — fit {r.get('fit_score', 0)}/10"):
-            st.text_input("Subject", r.get("email_subject", ""), key=f"s_{r['company']}")
-            st.text_area("Email", r.get("email_body", ""), height=160, key=f"b_{r['company']}")
+            if r.get("fit_reason"):
+                st.caption(f"Why this score: {r['fit_reason']}")
+            email = f"Subject: {r.get('email_subject', '')}\n\n{r.get('email_body', '')}"
+            st.code(email, language=None, wrap_lines=True)
+            st.caption("Click the copy icon at the top right of the box to copy the email.")
 
     buf = io.StringIO()
     df.reindex(columns=agent.FIELDS).to_csv(buf, index=False)
